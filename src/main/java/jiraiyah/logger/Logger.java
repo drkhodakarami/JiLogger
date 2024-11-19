@@ -6,7 +6,7 @@ import org.slf4j.LoggerFactory;
 import static jiraiyah.logger.LoggerConstants.*;
 
 @SuppressWarnings({"unused"})
-public abstract class Logger
+public class Logger
 {
     private final org.slf4j.Logger logger;
     private final boolean debug;
