@@ -18,7 +18,7 @@ public class Logger
     }
 
     /**
-     * Logs the initialization message of the UIO mod to the console.
+     * Logs the initialization message of the mod to the console.
      * This method uses a specific ANSI color formatting for the log message
      * to enhance visibility. It outputs an info level log indicating
      * that the mod is being initialized. The colors are set to a
@@ -27,6 +27,18 @@ public class Logger
     public void logMain()
     {
         this.logger.info("\u001B[38;2;" + 255 + ";" + 255 + ";" + 0 + ";48;2;" + 255 + ";" + 0 + ";" + 127 + "m>>> Initializing {}", RESET);
+    }
+
+    /**
+     * Logs the initialization message of the datagen to the console.
+     * This method uses a specific ANSI color formatting for the log message
+     * to enhance visibility. It outputs an info level log indicating
+     * that the mod is being initialized. The colors are set to a
+     * bright-yellow foreground with a green background for emphasis.
+     */
+    public void logDatagen()
+    {
+        this.logger.info("\u001B[38;2;" + 255 + ";" + 255 + ";" + 0 + ";48;2;" + 0 + ";" + 155 + ";" + 55 + "m>>> Generating Data {}", RESET);
     }
 
     /**
@@ -41,6 +53,48 @@ public class Logger
     {
         if (this.debug)
             log(message, Foreground.BRIGHT_MAGENTA);
+    }
+
+    /**
+     * Logs a message to the console if debugging is enabled.
+     * This method checks the DEBUG flag and, if true, logs the provided
+     * message using an info level log. The message is formatted with
+     * red text to enhance visibility in the console output.
+     *
+     * @param message The message to log, intended for debugging purposes.
+     */
+    public void logR(String message)
+    {
+        if (this.debug)
+            log(message, 255, 0, 0);
+    }
+
+    /**
+     * Logs a message to the console if debugging is enabled.
+     * This method checks the DEBUG flag and, if true, logs the provided
+     * message using an info level log. The message is formatted with
+     * green text to enhance visibility in the console output.
+     *
+     * @param message The message to log, intended for debugging purposes.
+     */
+    public void logG(String message)
+    {
+        if (this.debug)
+            log(message, 0, 255, 0);
+    }
+
+    /**
+     * Logs a message to the console if debugging is enabled.
+     * This method checks the DEBUG flag and, if true, logs the provided
+     * message using an info level log. The message is formatted with
+     * blue text to enhance visibility in the console output.
+     *
+     * @param message The message to log, intended for debugging purposes.
+     */
+    public void logB(String message)
+    {
+        if (this.debug)
+            log(message, 0, 0, 255);
     }
 
     /**
@@ -122,7 +176,7 @@ public class Logger
      * @param g       The green component of the text color (0-255).
      * @param b       The blue component of the text color (0-255).
      */
-    public void logRGB256(String message, int r, int g, int b)
+    public void log(String message, int r, int g, int b)
     {
         if (this.debug)
             this.logger.info("\u001B[38;2;{};{};{}m>>> {}" + RESET, r, g, b, message);
@@ -144,7 +198,7 @@ public class Logger
      * @param gb      The green component of the background color (0-255).
      * @param bb      The blue component of the background color (0-255).
      */
-    public void logBackRGB256(String message, int rf, int gf, int bf, int rb, int gb, int bb)
+    public void log(String message, int rf, int gf, int bf, int rb, int gb, int bb)
     {
         if (this.debug)
             this.logger.info("\u001B[38;2;{};{};{};48;2;{};{};{}m>>> {} " + RESET, rf, gf, bf, rb, gb, bb, message);

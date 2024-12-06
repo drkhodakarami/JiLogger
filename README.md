@@ -23,7 +23,7 @@ by Minecraft and FabricMC.
 
 This library is using repsy for maven publishing system. Follow the guideline bellow to make dependency for your mod.
 
-### ➤ Latest Version: 1.0.0
+### ➤ For latest version, please visit the [WIKI](https://drkhodakarami.github.io/)
 
 First you need to add the maven to your `build.gradle` repositories:
 
@@ -44,13 +44,13 @@ dependencies
 }
 ```
 
-Finally, we need to add an entry inside `gradle.properties` using the version from the maven repository. The version should look like x.x.x.
-x for sub versions of Minecraft, and for the main versions of the game it should be like x.x.x
+Finally, we need to add an entry inside `gradle.properties` using the version from the maven repository. The version should look like x.x.x+MC-x.x.x 
+for sub versions of Minecraft, and for the main versions of the game it should be like x.x.x+MC-x.x
 
-Look into [MAVEN REPOSITORY](https://repo.repsy.io/mvn/jiraiyah/jilogger/) for the proper versioning.
+Look into [MAVEN REPOSITORY](https://repo.repsy.io/mvn/jiraiyah/jilibs/jiraiyah/logger/) for the proper versioning.
 
 ```gradle.properties
-jilogger_version=x.x.x
+jilogger_version=x.x.x+MC-x.x.x
 ```
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)](#contributors)
